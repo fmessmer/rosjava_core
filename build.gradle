@@ -49,4 +49,4 @@ subprojects {
   }
 }
 
-defaultTasks 'publish', 'installApp'
+defaultTasks 'publish', 'install'
