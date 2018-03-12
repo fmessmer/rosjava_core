@@ -120,7 +120,7 @@ public class AdvertiseAddress {
     try {
       return "AdvertiseAddress<" + host + ", " + portCallable.call() + ">";
     } catch (Exception e) {
-      throw new RosRuntimeException(e);
+      return "AdvertiseAddress<" + host + ", " + "UNKNOWN" + ">";
     }
   }
 

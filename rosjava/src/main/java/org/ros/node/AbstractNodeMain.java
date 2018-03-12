@@ -16,6 +16,8 @@
 
 package org.ros.node;
 
+import javax.annotation.Nonnull;
+
 /**
  * A {@link NodeMain} which provides empty defaults for all signals.
  * 
@@ -24,7 +26,7 @@ package org.ros.node;
 public abstract class AbstractNodeMain implements NodeMain {
 
   @Override
-  public void onStart(ConnectedNode connectedNode) {
+  public void onStart(@Nonnull ConnectedNode connectedNode) {
   }
 
   @Override

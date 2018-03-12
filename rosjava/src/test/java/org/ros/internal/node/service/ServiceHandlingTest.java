@@ -101,16 +101,15 @@ public class ServiceHandlingTest extends RosTest {
         // Start the anonymous node to test the server
         nodeMainExecutor.execute(clientNode, secondConfig);
 
-        Thread.sleep(1000);
-        //assertTrue(countDownLatch.await(20, TimeUnit.SECONDS)); // Check if service calls were successful
+        assertTrue(countDownLatch.await(2, TimeUnit.SECONDS)); // Check if service calls were successful
 
         for(ClientThread a : threads) {
-            assertTrue(a.correct[0]);
+            assertTrue("order not preserved",a.correct[0]);
         }
         // // Shutdown nodes
-        // nodeMainExecutor.shutdownNodeMain(clientNode);
+        nodeMainExecutor.shutdownNodeMain(clientNode);
         // // Shutting down the transform server from this test results in a exception on printing the service address
-        // nodeMainExecutor.shutdownNodeMain(serverNode);
+        nodeMainExecutor.shutdownNodeMain(serverNode);
         // Stack trace is automatically logged
         // ROS is shutdown automatically in cleanup from ROS Test
     }
