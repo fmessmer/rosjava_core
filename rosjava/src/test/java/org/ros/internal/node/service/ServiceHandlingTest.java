@@ -31,7 +31,7 @@ public class ServiceHandlingTest extends RosTest {
     /**
      * Test if a multi-threaded node can safely call services from another node
      */
-    @Test public void testServiceResponeOrder() throws Exception {
+    @Test public void testServiceAvailability() throws Exception {
         final NodeConfiguration secondConfig = NodeConfiguration.newPrivate(rosCore.getUri());
         final MessageFactory messageFactory = secondConfig.getTopicMessageFactory();
         final CountDownLatch countDownLatch = new CountDownLatch(100);
