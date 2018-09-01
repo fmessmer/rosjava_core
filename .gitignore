@@ -8,5 +8,5 @@ bin
 .settings
 *.iml
 .idea
-
+bazel-*
 /.nb-gradle/

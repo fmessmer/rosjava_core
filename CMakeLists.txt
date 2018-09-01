@@ -13,6 +13,7 @@ find_package(catkin REQUIRED
     rosjava_build_tools
     geometry_msgs
     nav_msgs
+    rosjava_test_msgs
     rosgraph_msgs
     sensor_msgs
     tf2_msgs
@@ -29,3 +30,5 @@ catkin_package()
 # Installation
 ##############################################################################
 
+install(DIRECTORY ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_MAVEN_DESTINATION}/org/ros/rosjava_core/ 
+        DESTINATION ${CATKIN_GLOBAL_MAVEN_DESTINATION}/org/ros/rosjava_core)
